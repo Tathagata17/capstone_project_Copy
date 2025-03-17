@@ -27,7 +27,7 @@ public class RegisterPage {
 
 	}
 
-	public boolean fillDetails(String gender, String fName, String lName, String email, String password,
+	public void fillDetails(String gender, String fName, String lName, String email, String password,
 			String cPassword) {
 		driver.findElement(By.id("gender-" + gender)).click();
 		//wait needs to be added 
@@ -37,7 +37,7 @@ public class RegisterPage {
 		driver.findElement(Locators.password).sendKeys(password);
 		driver.findElement(Locators.confirmPassword).sendKeys(cPassword);
 		driver.findElement(Locators.registerBtn).click();
-		boolean actResult = true;
+		/*boolean actResult = true;
 		try {
 			// explicit wait for registration completed text
 			wait.until(ExpectedConditions.visibilityOfElementLocated(Locators.registerCompletedTxt));
@@ -46,11 +46,12 @@ public class RegisterPage {
 			actResult = false;
 			Reporter.generateReport(driver, test, Status.FAIL, "registration is failed");
 		}
-		return actResult;
+		return actResult;*/
 
 	}
 
 	public boolean completeRegistration() {
+		
 		driver.findElement(Locators.registerContinueBtn).click();
 		boolean actResult = true;
 		try {
@@ -65,16 +66,15 @@ public class RegisterPage {
 
 	}
 
-	public boolean validateFailedRegistration(String gender, String fName, String lName, String email, String password,
-			String cPassword) {
-		driver.findElement(By.id("gender-" + gender)).click();
+	public boolean validateFailedRegistration() {
+		//driver.findElement(By.id("gender-" + gender)).click();
 		//wait needs to be added
-		driver.findElement(Locators.firstName).sendKeys(fName);
-		driver.findElement(Locators.lastName).sendKeys(lName);
-		driver.findElement(Locators.email).sendKeys(email);
-		driver.findElement(Locators.password).sendKeys(password);
-		driver.findElement(Locators.confirmPassword).sendKeys(cPassword);
-		driver.findElement(Locators.registerBtn).click();
+		//driver.findElement(Locators.firstName).sendKeys(fName);
+		//driver.findElement(Locators.lastName).sendKeys(lName);
+		//driver.findElement(Locators.email).sendKeys(email);
+		//driver.findElement(Locators.password).sendKeys(password);
+		//driver.findElement(Locators.confirmPassword).sendKeys(cPassword);
+		//driver.findElement(Locators.registerBtn).click();
 		boolean actResult = true;
 		try {
 			// explicit wait for error message text

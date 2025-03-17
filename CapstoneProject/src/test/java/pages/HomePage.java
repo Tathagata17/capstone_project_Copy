@@ -3,6 +3,7 @@ package pages;
 import java.time.Duration;
 import java.util.Properties;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -27,8 +28,9 @@ public class HomePage {
 		wait = new WebDriverWait(driver, Duration.ofSeconds(10));
 		this.test = test;
 	}
-	//verify if its Home page
-	public  boolean verifyHomePage() {
+
+	// verify if its Home page
+	public boolean verifyHomePage() {
 		String currentUrl = driver.getCurrentUrl();
 		boolean actResult;
 		Properties prop = Readproperty.readProperites();
@@ -41,19 +43,22 @@ public class HomePage {
 		}
 		return actResult;
 	}
-	
-	//validate selection of computer tab and desktop option from the list
-	public boolean ValidateSelectComputerTab() {
+
+	// validate selection of computer tab and desktop option from the list
+	public boolean ValidateSelectComputerTab(String item) {
 		boolean actResult;
-		Actions action = new Actions(driver);
-		WebElement computer = driver.findElement(Locators.computer);
-		WebElement desktop = driver.findElement(Locators.desktop);
-		action.moveToElement(computer).pause(Duration.ofSeconds(5)).moveToElement(desktop).click().perform();
+	
 		try {
-			WebElement desktopResultText = driver.findElement(Locators.desktopResultText);
-			wait.until(ExpectedConditions.visibilityOf(desktopResultText));
-			String actResultText = desktopResultText.getText();
-			if (actResultText.equals("Desktops")) {
+			Properties prop=Readproperty.readProperites();
+			wait.until(ExpectedConditions.urlToBe(prop.getProperty("URL")));
+			Actions action = new Actions(driver);
+			WebElement computer = driver.findElement(Locators.computer);
+			WebElement itemName = driver.findElement(By.xpath(("(//a[contains(text(),'"+item+"')])[1]")));
+			action.moveToElement(computer).pause(Duration.ofSeconds(2)).moveToElement(itemName).click().perform();
+			WebElement ResultText = driver.findElement(Locators.ResultText);
+			wait.until(ExpectedConditions.visibilityOf(ResultText));
+			String actResultText = ResultText.getText();
+			if (actResultText.equals(item)) {
 				actResult = true;
 				Reporter.generateReport(driver, test, Status.PASS, "Navigates to Computers menu success");
 			} else {
@@ -66,8 +71,8 @@ public class HomePage {
 		}
 		return actResult;
 	}
-	
-	//validation of logout functionality
+
+	// validation of logout functionality
 	public boolean validateLogOut() {
 		boolean actResult;
 		Actions action = new Actions(driver);
@@ -90,41 +95,34 @@ public class HomePage {
 		}
 		return actResult;
 	}
-	
-	//write function to click to register page and validate it 
-	
-	public boolean validateClcikToRegisterLink()
-	{
+
+	// write function to click to register page and validate it
+
+	public boolean validateClcikToRegisterLink() {
 		Actions action = new Actions(driver);
 		WebElement registerLink = driver.findElement(Locators.registerLink);
 		action.moveToElement(registerLink).click().perform();
-		boolean actResult=true;
-		try
-		{
-			WebElement registerPageText=driver.findElement(Locators.registerPageText);
+		boolean actResult = true;
+		try {
+			WebElement registerPageText = driver.findElement(Locators.registerPageText);
 			wait.until(ExpectedConditions.visibilityOf(registerPageText));
-		}
-		catch(TimeoutException Te)
-		{
-			actResult=false;
+		} catch (TimeoutException Te) {
+			actResult = false;
 		}
 		return actResult;
 	}
-	//write function to click on login link and validate
-	public boolean validateClickToLoginLink()
-	{
+
+	// write function to click on login link and validate
+	public boolean validateClickToLoginLink() {
 		Actions action = new Actions(driver);
 		WebElement loginLink = driver.findElement(Locators.logInLink);
 		action.moveToElement(loginLink).click().perform();
-		boolean actResult=true;
-		try
-		{
-			WebElement logInTextInLoginPage=driver.findElement(Locators.logInTextInLoginPage);
+		boolean actResult = true;
+		try {
+			WebElement logInTextInLoginPage = driver.findElement(Locators.logInTextInLoginPage);
 			wait.until(ExpectedConditions.visibilityOf(logInTextInLoginPage));
-		}
-		catch(TimeoutException Te)
-		{
-			actResult=false;
+		} catch (TimeoutException Te) {
+			actResult = false;
 		}
 		return actResult;
 	}

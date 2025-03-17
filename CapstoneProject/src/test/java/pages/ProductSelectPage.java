@@ -4,6 +4,7 @@ package pages;
 
 import java.time.Duration;
 
+import org.openqa.selenium.By;
 import org.openqa.selenium.TimeoutException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -30,10 +31,11 @@ public class ProductSelectPage {
 	}
 
 	// selecting first product
-	public boolean validateSelectingProduct() {
+	public boolean validateSelectingProduct(String productName) {
 		boolean actResult = true;
 		try {
 			WebElement Product = driver.findElement(Locators.SelectproductXpath);
+			//By.xpath("//a[contains(@title,'"+productName+"')]")
 			wait.until(ExpectedConditions.elementToBeClickable(Product));
 			Product.click();
 			WebElement productPageText = driver.findElement(Locators.productNameInProductDetailPage);

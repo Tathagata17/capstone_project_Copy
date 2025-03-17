@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="489.619" tests="2" skipped="0" failures="2" errors="0" timestamp="2025-03-17T09:32:16.388053600Z">
+<testcase classname="place order" name="Placing order is successful - #1.1" time="425.881">
+<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable: [object HTMLInputElement] has no size and location
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [660b2df71d89a93b434bb80ddbfa8a1c, actions {actions=[org.openqa.selenium.interactions.Sequence@30a7c98f]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\KIIT\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51195}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51195/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 660b2df71d89a93b434bb80ddbfa8a1c">
+<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLInputElement] has no size and location
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [660b2df71d89a93b434bb80ddbfa8a1c, actions {actions=[org.openqa.selenium.interactions.Sequence@30a7c98f]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\KIIT\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51195}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51195/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: 660b2df71d89a93b434bb80ddbfa8a1c
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:631)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
+	at pages.ProductDetailsPage.gotoShoppingCart(ProductDetailsPage.java:66)
+	at testdefinations.PlaceOrderStepDef.user_clicks_on_the_shopping_cart_link(PlaceOrderStepDef.java:68)
+	at ✽.user clicks on the shopping cart link(file:///C:/Users/KIIT/eclipse-workspace/CapstoneProject/src/test/resources/features/placeOrder.feature:10)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on home page..................................................passed
+When user clicks on login link..............................................passed
+And user enters email "medisettypravallika@gmail.com" and password "Selenium@123" and click login button.passed
+And user navigates to Computers menu and selects item "Desktops" from the list and clicks.passed
+And user selects the product "Build your own cheap computer"................passed
+And user selects the processor "Fast  [+100.00]",RAM "8 GB  [+60.00]",HDD "400 GB  [+100.00]",Software "Office Suite  [+100.00]" and clicks on add to cart button.passed
+And user clicks on the shopping cart link...................................failed
+And user selects country "India",Zipcode "522503" , clicks on terms and conditions checkbox and clicks on checkout button.skipped
+And user enters Billing address firstname "user1",lastname "abc" ,email "medisettypravallika@gmail.com" ,company "wipro",country "India",city "hyd",address1 "7-143",zipcode "<Zipcode>", Phone no "1234567890" and clicks on continue button.skipped
+And user verifies default address is selected and clicks on continue button.skipped
+And user selects the shippingType "Next Day Air" and clicks on continue button.skipped
+And user selects the PaymentType "Cash On Delivery (COD)" and clicks on continue button.skipped
+And user verifies cod selected by default and clicks on continue button.....skipped
+And user verifies the product information clicks on confirm button..........skipped
+Then user validates the order and clicks on continue button.................skipped
+Then user Logs out..........................................................skipped
+]]></system-out>
+</testcase>
+<testcase classname="place order" name="Placing order is failed - #1.1" time="58.416">
+<failure type="org.openqa.selenium.ElementNotInteractableException" message="element not interactable: [object HTMLInputElement] has no size and location
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b1a5f205a23f4f7dbb98e786db9a0d00, actions {actions=[org.openqa.selenium.interactions.Sequence@6c008c24]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\KIIT\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51326}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51326/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b1a5f205a23f4f7dbb98e786db9a0d00">
+<![CDATA[org.openqa.selenium.ElementNotInteractableException: element not interactable: [object HTMLInputElement] has no size and location
+  (Session info: chrome=134.0.6998.89)
+Build info: version: '4.29.0', revision: '5fc1ec94cb'
+System info: os.name: 'Windows 11', os.arch: 'amd64', os.version: '10.0', java.version: '21.0.3'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [b1a5f205a23f4f7dbb98e786db9a0d00, actions {actions=[org.openqa.selenium.interactions.Sequence@6c008c24]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 134.0.6998.89, chrome: {chromedriverVersion: 134.0.6998.88 (7e3d5c978c6d..., userDataDir: C:\Users\KIIT\AppData\Local...}, fedcm:accounts: true, goog:chromeOptions: {debuggerAddress: localhost:51326}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: windows, proxy: Proxy(), se:cdp: ws://localhost:51326/devtoo..., se:cdpVersion: 134.0.6998.89, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:extension:minPinLength: true, webauthn:extension:prf: true, webauthn:virtualAuthenticators: true}
+Session ID: b1a5f205a23f4f7dbb98e786db9a0d00
+	at java.base/jdk.internal.reflect.DirectConstructorHandleAccessor.newInstance(DirectConstructorHandleAccessor.java:62)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:502)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:486)
+	at org.openqa.selenium.remote.ErrorCodec.decode(ErrorCodec.java:167)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:138)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:50)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:215)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:216)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:174)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:545)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:631)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:616)
+	at org.openqa.selenium.interactions.Actions.perform(Actions.java:581)
+	at pages.ProductDetailsPage.gotoShoppingCart(ProductDetailsPage.java:66)
+	at testdefinations.PlaceOrderStepDef.user_clicks_on_the_shopping_cart_link(PlaceOrderStepDef.java:68)
+	at ✽.user clicks on the shopping cart link(file:///C:/Users/KIIT/eclipse-workspace/CapstoneProject/src/test/resources/features/placeOrder.feature:32)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on home page..................................................passed
+When user clicks on login link..............................................passed
+And user enters email "medisettypravallika@gmail.com" and password "Selenium@123" and click login button.passed
+And user navigates to Computers menu and selects item "Desktops" from the list and clicks.passed
+And user selects the product "Build your own cheap computer"................passed
+And user selects the processor "Fast  [+100.00]",RAM "8 GB  [+60.00]",HDD "400 GB  [+100.00]",Software "Office Suite  [+100.00]" and clicks on add to cart button.passed
+And user clicks on the shopping cart link...................................failed
+And user selects country "India",Zipcode "522503" , clicks on terms and conditions checkbox and clicks on checkout button.skipped
+And user enters Billing address firstname "user1",lastname "abc" ,email "medisettypravallika@gmail.com" ,company "wipro",country "India",city "hyd",address1 "7-143",zipcode "<Zipcode>", Phone no "1234567890" and clicks on continue button.skipped
+And user verifies default address is selected and clicks on continue button.skipped
+And user selects the shippingType "Next Day Air" and clicks on continue button.skipped
+And user selects the PaymentType "Credit Card" and clicks on continue button.skipped
+And user selects credit card Type "Visa", enters card holder name "user1", card number "4111111111111111",expiry month "03",expiry year "2028" and cvv "12" and clicks on continue button.skipped
+Then user validates the error message Wrong card code is displayed..........skipped
+]]></system-out>
+</testcase>
+</testsuite>

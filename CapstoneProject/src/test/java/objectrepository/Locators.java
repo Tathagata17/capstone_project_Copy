@@ -21,15 +21,16 @@ public class Locators {
 	public static By logInTextInLoginPage = By.xpath("//h1[text()='Welcome, Please Sign In!']");
 	// locators for home page
 	public static By computer = By.xpath("(//a[@href='/computers'])[1]");
-	public static By desktop = By.xpath("(//a[@href='/desktops'])[1]");
+	public static By desktop = By.xpath("(//a[contains(text(),'Desktops')])[1]");
 	public static By logoutlink = By.xpath("//a[text()='Log out']");
-	public static By desktopResultText = By.xpath("//h1[text()='Desktops']");
+	public static By ResultText = By.tagName("h1");
 	public static By logInLink = By.xpath("//a[text()='Log in']");
 	public static By registerLink = By.xpath("//a[@href='/register']");
 
 	// locators for select product page
 	public static By SelectproductXpath = By.xpath("(//div[@class=\"product-item\"])[1]");
-	public static By productNameInProductDetailPage=By.xpath("//h1[contains(text(),\"Build your own cheap computer\")]");
+	public static By productNameInProductDetailPage=By.xpath("//h1[contains(text(),'Build your own cheap computer')]");
+	
 
 	// locators for product details page
 	public static By processor = By.id("product_attribute_72_5_18_53");
@@ -48,9 +49,11 @@ public class Locators {
 	public static By termsCheckBox = By.id("termsofservice");
 	public static By checkOutBtn = By.id("checkout");
 	// locators for billing address in checkout page
+	public static By BillingAddressText = By.xpath("//h2[text()='Billing address']");
 	public static By fNameInAddress = By.id("BillingNewAddress_FirstName");
 	public static By lNameInAddress = By.id("BillingNewAddress_LastName");
 	public static By emailInAddress = By.id("BillingNewAddress_Email");
+	public static By companyInAddress = By.id("BillingNewAddress_Company");
 	public static By countryInAddress = By.id("BillingNewAddress_CountryId");
 	public static By cityInAddress = By.id("BillingNewAddress_City");
 	public static By address1 = By.id("BillingNewAddress_Address1");
@@ -59,11 +62,16 @@ public class Locators {
 	public static By phoneNumber = By.id("BillingNewAddress_PhoneNumber");
 	public static By continueBtnInAdress = By.cssSelector(".new-address-next-step-button");
 	// locators for shipping address in checkout page
+	public static By shippingdetail=By.xpath("//label[text()='Select a shipping address from your address book or enter a new address.']");
 	public static By continueBtnInShipping = By.cssSelector(".shipping-method-next-step-button");
+	//locators for shipping Method in checkout page
+	public static By radioButton =By.id("shippingoption_0");
+	public static By shipingmethodText=By.id("//label[text()=\"Next Day Air (0.00)\"]");
 	// locators for payment method in checkout page
 	public static By codRadioBtn = By.id("paymentmethod_0");
 	public static By creditCardRadioBtn = By.id("paymentmethod_2");
 	public static By continueBtnInpay = By.cssSelector(".payment-method-next-step-button");
+	public static By payemntMethodText=By.xpath("//label[text()='Credit Card']");
 	// locators for payment information in checkout page
 	public static By creditCardType = By.id("CreditCardType");
 	public static By cardHolderName = By.id("CardholderName");
@@ -74,6 +82,7 @@ public class Locators {
 	public static By continueBtnInpayInfo = By.cssSelector(".payment-info-next-step-button");
 	// locators for confirm order in checkout page
 	public static By continueBtnInconfirm = By.cssSelector(".confirm-order-next-step-button");
+	public static By PlaceOrderText =By.xpath("//strong[text()='Your order has been successfully processed!']");
 	// locators for order placed page
 	public static By continueBtnIncompleted = By.cssSelector(".order-completed-continue-button");
 
