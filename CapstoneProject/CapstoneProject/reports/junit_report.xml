@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="Cucumber" time="114.655" tests="2" skipped="0" failures="1" errors="0" timestamp="2025-03-17T19:22:45.557239100Z">
+<testcase classname="place order" name="Placing order is successful - #1.1" time="51.022">
+<system-out><![CDATA[
+Given user is on home page..................................................passed
+When user clicks on login link..............................................passed
+And user enters email "medisettypravallika@gmail.com" and password "Selenium@123" and click login button.passed
+And user navigates to Computers menu and selects item "Desktops" from the list and clicks.passed
+And user selects the product "Build your own cheap computer"................passed
+And user selects the processor "Fast  [+100.00]",RAM "8 GB  [+60.00]",HDD "400 GB  [+100.00]",Software "Office Suite  [+100.00]" and clicks on add to cart button.passed
+And user clicks on the shopping cart link...................................passed
+And user selects country "India",Zipcode "522503" , clicks on terms and conditions checkbox and clicks on checkout button.passed
+And user enters Billing address firstname "user1",lastname "abc" ,email "medisettypravallika@gmail.com" ,company "wipro",country "India",city "hyd",address1 "7-143",zipcode "522503", Phone no "1234567890" and clicks on continue button.passed
+And user verifies default address is selected and clicks on continue button.passed
+And user selects the shippingType "Next Day Air" and clicks on continue button.passed
+And user selects the PaymentType "CashOnDelivery" and clicks on continue button.passed
+And user verifies cod selected by default and clicks on continue button.....passed
+And user verifies the product information clicks on confirm button..........passed
+Then user validates the order and clicks on continue button.................passed
+Then user Logs out..........................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="place order" name="Placing order is failed - #1.1" time="61.657">
+<failure type="java.lang.AssertionError" message="expected [true] but found [false]">
+<![CDATA[java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:111)
+	at org.testng.Assert.failNotEquals(Assert.java:1590)
+	at org.testng.Assert.assertTrue(Assert.java:57)
+	at org.testng.Assert.assertTrue(Assert.java:67)
+	at testdefinations.PlaceOrderStepDef.user_selects_credit_card_type_enters_card_holder_name_card_number_expiry_month_expiry_year_and_cvv_and_clicks_on_continue_button(PlaceOrderStepDef.java:129)
+	at ✽.user selects credit card Type "Visa", enters card holder name "user1", card number "4111111111111111",expiry month "03",expiry year "2028" and cvv "12" and clicks on continue button(file:///C:/Users/KIIT/eclipse-workspace/CapstoneProject/src/test/resources/features/placeOrder.feature:38)
+]]>
+</failure>
+<system-out><![CDATA[
+Given user is on home page..................................................passed
+When user clicks on login link..............................................passed
+And user enters email "tathagata14n14@gmail.com" and password "Mypassword@123" and click login button.passed
+And user navigates to Computers menu and selects item "Desktops" from the list and clicks.passed
+And user selects the product "Build your own cheap computer"................passed
+And user selects the processor "Fast  [+100.00]",RAM "8 GB  [+60.00]",HDD "400 GB  [+100.00]",Software "Office Suite  [+100.00]" and clicks on add to cart button.passed
+And user clicks on the shopping cart link...................................passed
+And user selects country "India",Zipcode "522503" , clicks on terms and conditions checkbox and clicks on checkout button.passed
+And user enters Billing address firstname "Tathagata",lastname "abc" ,email "tathagata14n14@gmail.com" ,company "wipro",country "India",city "kolkata",address1 "7-147",zipcode "522503", Phone no "1234567890" and clicks on continue button.passed
+And user verifies default address is selected and clicks on continue button.passed
+And user selects the shippingType "Next Day Air" and clicks on continue button.passed
+And user selects the PaymentType "Credit Card" and clicks on continue button.passed
+And user selects credit card Type "Visa", enters card holder name "user1", card number "4111111111111111",expiry month "03",expiry year "2028" and cvv "12" and clicks on continue button.failed
+Then user validates the error message Wrong card code is displayed..........skipped
+]]></system-out>
+</testcase>
+</testsuite>
